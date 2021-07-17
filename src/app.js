@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const { INTERNAL_SERVER_ERROR, NOT_FOUND } = require('./constants/http_codes');
+const router = require('./routes/router');
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -17,6 +18,8 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+app.use('/', router);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
