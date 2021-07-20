@@ -31,4 +31,16 @@ describe('Passing JSON without user message: ',()=>{
     });
 });
 
+describe('Fetching wrong URL: ',()=>{
+    it('should response Not Found code', (done) => {
+        chai.request(app)
+            .post('/')
+            .send({usermessage: "Hello World"})
+            .end( function(err,res){
+                expect(res).to.have.status(404);
+                done();
+            });
+    });
+});
+
 

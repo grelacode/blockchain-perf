@@ -3,13 +3,13 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const { INTERNAL_SERVER_ERROR, NOT_FOUND } = require('./constants/http_codes');
+const { INTERNAL_SERVER_ERROR, NOT_FOUND } = require('./constants/http-codes');
 const router = require('./routes/router');
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods',
-        'GET, POST');
+        'POST');
     res.setHeader('Access-Control-Allow-Headers',
         'X-Requested-With,Content-Type,Accept,Authorization');
     res.setHeader('Access-Control-Allow-Credentials', true);
