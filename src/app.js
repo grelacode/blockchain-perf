@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const { INTERNAL_SERVER_ERROR, NOT_FOUND } = require('./constants/http-codes');
+const { INTERNAL_SERVER_ERROR, NOT_FOUND } = require('./constants/httpCodes');
 const router = require('./routes/router');
 
 app.use((req, res, next) => {

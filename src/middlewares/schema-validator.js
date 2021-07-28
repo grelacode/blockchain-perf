@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const { UNPROCESSABLE_ENTITY } = require('../constants/http-codes');
+const { UNPROCESSABLE_ENTITY } = require('../constants/httpCodes');
 
 const userMessageValidator = (userMessageSchema) => {
 
